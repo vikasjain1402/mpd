@@ -1,0 +1,329 @@
+
+
+
+{% load static %}
+
+<!DOCTYPE html >
+<html lang="en">
+	<head>
+		<meta name="google-site-verification" content="WLRNyVYtxaw81wmCN2yUfyYOch8DpVkvJlWG0d1zi7k" />
+		<meta name="google-site-verification" content="T3oGUJc6mG-RlhVVcfk0L0NwFIFwyXMBSELRL54p5eo" />
+		                <meta name="msvalidate.01" content="403131AB0069A010D0C3F07B99945098" />
+			 <title>Corona Status {{path|last}} Cases {{a}} Deaths {{b}}</title>
+			 <meta charset="utf-8">
+			<meta name="google-site-verification" content="T3oGUJc6mG-RlhVVcfk0L0NwFIFwyXMBSELRL54p5eo" />
+		      <meta name="viewpoint" content="width=device-width ,initial-scale=1.0">
+		     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		     <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon.ico' %}"/> 
+		         <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+		         <script type = "text/javascript">google.charts.load('current', {packages: ['corechart']});     </script>
+		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+		<link rel="shortcut icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+		<link rel="shortcut icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'site.webmanifest' %}">
+		<link rel="mask-icon" href="{% static 'safari-pinned-tab.svg' %}" color="#ff0000">
+		<meta name="msapplication-TileColor" content="#ff0000">
+		<meta name="theme-color" content="#ffffff">
+<meta name="keywords" content="corona india districts,corona city, indian districts corona trend, corona trend india, covid-19 tracker,">
+
+	 <style >
+
+
+.add-image {width: 50%;
+    margin-left: 25%;}
+
+
+#addcontainer {background: white;
+    color: black;}
+
+
+.top-logo{width:1em;float: left;
+    margin-left: 1em;}
+.main-heading_box {position: sticky;
+    top: 378px;
+    z-index: 2;background:#222}
+.main-heading { font-family: monospace; ;width: 80%;    background: linear-gradient(to bottom , #333, #ac77f9);    text-align: center;  border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;  
+                       ;font-size: 33px;    margin-left: 10%;    margin-bottom: calc(.25em);   }
+#help-alert {display:inline;color:white;font-size:1em;font-weight:bold}
+@media screen and (min-width: 1900px) { #mobile-share { visibility: hidden; clear: both; float: left; margin: 10px auto 5px 20px; width: 30%; display: none; }}
+#chartbutton{    width: 90%;    height: 42px;    font-size: 30px;    background: #333;    border-radius: 20px 20px;    margin-left: 5%;    color: white;    outline:none    }
+
+html{-webkit-text-size-adjust:100%}
+.facts-heading{
+font-size: 34px;
+    color: black;
+    border-top-left-radius: 10px;
+    display: inline-block;
+    margin-top: 60px;
+    border-top-right-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: linear-gradient(to bottom right,pink, mediumpurple);}
+
+.facts_heading_posi{display: inline;color: white;font-size:35px;font-weight:bold}
+
+
+.rank_suf{display:inline;;font-size: 25px}
+	body{background-color:#222 ; color: white;font-family: sans-serif;}
+		.top {     z-index: 2;    background: linear-gradient(to right , white, #ac77f9);border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;font-size: 60px;text-align: center;top: 0px;position: sticky;    color: maroon;
+    font-weight: bold;display:f}
+		.header{ z-index:1;background-color: #333;position: sticky;top: 70px;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-around;height: fit-content;border-radius: 20px;
+color: black;border: 3px solid black}
+			
+			.left { display: flex;align-self: center;width: auto;flex-wrap: wrap;flex-direction: row;}
+			.left img{width: 100%;align-self: center;    height: 80px;border-radius: 10px}
+		@media only screen and (max-width: 1000px) {.left {display:none;} .top {font-size: 35px} .header {top:35px} #t {font-size:25px;} #time {font-size:25px;margin-right:10%}}
+		@media only screen and (orientation:landscape){.header {position:inherit} .main-heading_box{position:inherit}}
+			.mid  { display: flex;flex-wrap: wrap;flex-direction: row;text-align: center;align-self: center;}
+				.navbar{align-items: center;padding: 0 0 0 0;}
+				.navbar li {display: inline-block;font-size: 35px;padding: 10px 20px;margin: 5px;background: #d2b7f9 ; border-radius: 10px 23px}
+				.navbar li a {color: black;text-decoration: none; }
+				.navbar li a:hover {color: white; text-decoration: underline;}
+
+			.right{display: flex;flex-direction: column;flex-wrap: wrap;text-align: justify;justify-content: space-around;}
+				.total_summary{display: flex;flex-direction: row;flex-wrap: wrap;text-align: justify;justify-content: space-around}	
+					.summary{ border-radius: 9px;background-color: #222;display: inline-block;width: 400px;margin: 5px 10px;padding:15px 25px;font-size:38px}
+						.summary_group{display: block;text-align: center;font-family: sans-serif;color: #ac77f9;}
+						.total_cases ,.total_deaths {display: inline-block;padding-right: : 0px;color: #989592}
+						.total_cases_num,.total_death_num {color: #ff416c;display: inline-block;float: right;padding-right: 3px;}
+						.summary :hover	{;border-radius:9px}	
+					.date {font-size: 25px;display: block;text-align-last: end;margin: 10px 5px ;color:lightcyan}
+			
+		.result {border :;margin:5px 5px;display: flex;flex-wrap: wrap;flex-direction: column;justify-content: space-around;border-radius: 10px;height: 700px;width: -webkit-fill-available;overflow-x: scroll}
+			.chart img{display: inline-block;align-items: center;border: none ;border-radius: 25px;border-top-width:thick;;height:660px;margin:10px 10px;width:770px}
+
+		.leftbottom {height:800px;
+    display: inline-block;font-size: 40px;overflow: scroll;width: -webkit-fill-available;align-items: center;text-align: center;border-radius: 10px;padding: 0px 10px;margin: 10px 10px;}
+
+		    	.heading{z-index:0;color: black;position: sticky;display:inline-block;;top: 0px;align-items: center;align-self: center;;padding-right: 10px;padding-left: 10px;border-radius: 6px;background-color: lightgray}
+		    	.belowheading {margin:2px 4px;align-items: center;align-self: center;  background-color: #262626;display: inline-block;padding-right: 10px;padding-left: 10px;border-radius: 6px;border-radius: 10px;color: #ac77f9;padding-top:1px ;padding-bottom:1px;margin: 2px 2px;text-decoration:None;box-shadow: 0px 0px 12px black} 
+		    	.belowheading a {margin:2px 4px;align-items: center;align-self: center;    background-color: #262626;display: inline-block;padding-right: 10px;padding-left: 0px;border-radius: 6px;border-radius: 10px;color: #ac77f9;padding-top:1px ;padding-bottom:1px;margin: 2px 2px;text-decoration:None;box-shadow: 0px 0px 12px black}
+	
+		.belowheading a:hover {color :blue;background-color:white}
+		.belowheading2{align-items: center;    align-self: center;    background-color: #262626;    display: inline-block;    padding-right: 10px;    padding-left: 10px;    border-radius: 6px;    border-radius: 10px;    color: #ac77f9;    padding-top: 1px;    padding-bottom: 1px;    margin: 2px 0px;    text-decoration: None;    box-shadow: 0px 0px 12px black}
+
+    	.footer {color: gray; text-align: center;margin-top: 30px;padding-top: 20px;padding-bottom: 20px;font-size:25px;
+			background-color: #fbfbfb;border-top: 1px solid red;width:auto;bottom:auto;position:absolute;width: -webkit-fill-available}
+
+		.factcontainer{display:flex;flex:auto;flex-wrap: wrap;flex-direction: row;flex-flow:wrap;justify-content: space-around;align-items: center;margin: 20px;background-color: #262626;border-radius: 33px;padding: 30px;box-shadow: 0px 0px 20px lightgrey}	
+			.facts{    border: 3px solid #333;    background-color: #333;    padding: 5px;    border-radius: 20px;    display: flex;    flex-direction: row-reverse;    margin: 8px 8px;    text-align: center;    font-size: 24px;    width: 70%;    justify-content: space-between;padding: 5px 35px;}	
+				.facts_string{display: inline;color:#9275e6;font-size: 35px;padding: 0px 10px}
+				.facts_values{display:inline-block;color:white;font-size: 40px;}
+
+				.about{text-align:  center;margin: auto;padding: 50px;max-width: 900px;justify-content: center;}	
+				.about h2{text-align: center;justify-content: center;color: White}
+				.about p{font-size: 30px;text-align: left;color: blue}	
+				.regads{text-align: left}
+				.anno p{margin-left: 30px:float:right;color: white;font-size: 40px}
+				.about p{text-align: justify;}
+			#time {display: block;font-size: 24px ;text-align:end}	
+			#india-o {color:white;display:inline}				
+    .click_more {font-size:2em }
+     .stats {display: flex;flex-wrap: wrap;flex-direction: row;background-color: black;justify-content:space-around;padding-top: 10px;padding-bottom: 10px}
+			.stats-item {border: 3px solid #333;background-color:#333;padding: 15px 15px;justify-content: space-between;border-radius: 5px;display:flex;flex:auto;flex-direction:column;width:25%;margin: 10px 19px;text-align:center;font-size:34px;color: #CFDDF7}
+			.stats-num{font-size:35px;color:#ac77f9;font-weight:bold}
+			{% block style %}
+		
+			{% endblock %}
+	 </style>
+</head>
+
+<body >
+<noscript style="font-size:40px;color:red">
+Your Browser Doesn't Support JavaScript !Please go to Settings and unblock JavaScript
+</noscript>
+<div>
+		<div class="top" >
+<img src="{% static 'favicon-32x32.png' %}" class="top-logo">  
+<div style="display:inline-block">
+<div style="display:inline-block"> CORONAstats.CO.</div><div id='india-o'>IN</div>
+</div>
+    		</div>
+		<div id="time">
+    				<div id="t"></div>
+		</div>
+		
+		<script>
+		setInterval(updatetimefunc,1000);
+		function updatetimefunc(){
+			t.innerHTML=new Date().toLocaleString()}
+
+		</script>
+
+		<div class="header" >
+				<div class="left">
+							<img src="{% static 'images1.jpeg' %}">
+					</div> 
+					<div class="mid">
+								<ol class="navbar">
+									<li><a href="/india">India</a>  </li>
+									<li><a href="/home">World </a> </li>
+									<li><a href="/">Search Place</a> </li>
+									<li><a href="/about/about">About Us </a> </li>
+									
+									
+								</ol>
+					</div>
+					<div class="right">
+						<div class="total_summary">
+								<a href="/home"><div class="summary">
+											<div>
+                									<div class="summary_group">WORLD</div>
+            										<div class="total_cases">Total Cases</div>
+            										<div class="total_cases_num">{{wt}}</div>
+            										<div class="total_deaths">Total Deaths</div>
+            										<div class="total_death_num">{{wd}}</div>
+            						
+            										
+										        </div>
+
+										</div>
+								</a>
+								<a href="/india"><div class="summary">
+                                        						<div>
+											<div class="summary_group">INDIA</div>
+            										<div class="total_cases">Total Cases</div>
+            										<div class="total_cases_num">{{it}}</div>
+            										<div class="total_deaths">Total Deaths</div>
+            										<div class="total_death_num">{{id}}</div>
+											</div>
+									</div>
+								</a>
+						</div>
+						<div class="date">
+													Last updated at : <div style="color:blue; display:inline ;font-size:35px;color:#ff416c ">{{d}} </div>ago
+						</div>
+					</div>
+		</div>
+
+{% block mainheadings %}
+{% endblock %}
+
+
+        				{% block stats %}
+
+					{% endblock %}
+
+				{% block district %}
+	
+				{% endblock %}
+
+			
+		        		
+					{% block content %}
+
+					{% endblock %}
+		    	
+			
+				{% block clickmore %}
+					
+				{% endblock %}
+			
+{% block foradd %}
+{% endblock %}
+
+		    	
+					{% block content1 %}	
+			
+					{% endblock %}
+		    	
+			</div>
+	        
+
+
+
+		<div class="footer">
+			<p>© Copyright Coronastats.co.in - All rights reserved - Disclaimer & Privacy Policy -
+				By Admin  -  coronastatsliveindia@gmail.com</p>
+                  <div id="tac"><a style="color: -webkit-link;    cursor: pointer;    text-decoration: underline;">Terms and Conditions </a></div>
+		</div>
+
+<div id="mobile-share" style="position: fixed;bottom: 30%;right:10px">
+<a href="whatsapp://send?text=Stay Updated with Live Coronavirus Tracker of India - https://coronastats.co.in .
+A complete tacker with graphical views and tables of all districts/zones in India." data-action="share/whatsapp/share"><img src="{% static 'download.png' %}" style="width:80%;opacity: 0.7;"></a>
+</div>
+
+
+<script>
+
+ document.getElementById("tac").addEventListener("click",
+                                function (){
+window.open('/about/TermsAndCondition',"_blank");
+})
+</script>
+
+
+{% block forscript %}
+       <script>
+
+                function rank(i)
+                {
+                    var suf="th";
+                        if (i%10==1){suf="st"};
+                        if (i%10==2){suf="nd"};
+                        if (i%10==3){suf="rd"};
+                        if (Math.floor((i%100)/10)==1){suf="th"};
+                    return suf
+                }
+                var ar=document.getElementsByClassName("facts_values")
+                var ar1=document.getElementsByClassName("rank_suf")
+
+                for (let j=0;j<ar.length;j++)
+                        { ar1[j].innerHTML=rank(ar[j].innerText) }
+        </script>
+
+        <script language = "JavaScript">
+                 function drawChart(mda,position,typeg="line",title="__",xlable="date",ylable="count")  {
+
+                    var data = google.visualization.arrayToDataTable(mda);
+
+                    var options = {     titleTextStyle:{
+                                                fontSize:33,
+                                                bold:true,
+                                                color:'#e4c1f9',
+						},
+                                        title:title,
+                                        legend:{position:'top',textStyle:{fontSize:22,color:'white'}},
+                                        height:600,
+                              
+                                        bar:{groupWidth:'80%'},
+                                        lineWidth:7,
+                                        pointSize:8,
+                                        colors:['#ac77f9','lightgray'],
+                                        hAxis:{title:xlable,
+                                
+                                                titleTextStyle:{color:'#ac77f9',fontSize:13,alignment:""},
+                                                textStyle:{color:'white',fontSize:18},
+                                                gridlines:{color:'transparent'}},
+                                        vAxis:{title:ylable,
+                                                titleTextStyle:{color:'#ac77f9',fontSize:13},
+                                                textStyle:{color:'white',fontSize:18},
+                                                gridlines:{color:"black",'count':1}},
+                                        backgroundColor:{fill:"",fillOpacity:0},
+                                        chartArea:{backgroundColor:"",fillOpacity:.0,width:'85%'},
+					animation:{duration:2000,easing:'out',startup:true},
+
+                                };
+
+                    if (typeg==='line')
+                        {var chart = new google.visualization.LineChart(document.getElementById(position));}
+                    else if (typeg==='area')
+                        {var chart = new google.visualization.AreaChart(document.getElementById(position));}
+                    else
+                        {var chart = new google.visualization.ColumnChart(document.getElementById(position));}
+                    chart.draw(data, options);
+                    document.getElementById(position).style.display="Block";
+                 }
+        </script>
+
+
+<script>
+function mouseOver() {
+  alert("Calculated Data .....\n\n Death Rate % = Deaths over closed cases (Deaths+Recovered) \n Recovery Rate % = Recoveries over closed cases (Deaths + Recovered).")
+}
+</script>
+
+
+{% endblock %}
+</body>
+</html>

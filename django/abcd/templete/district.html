@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block mainheadings %}
+    <div class="main-heading_box">
+        {% for i in path %}
+                <div class="main-heading">{{i}}</div>
+        {% endfor %}
+     </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="facts-heading"> Charts</div>
+<div class="result">
+
+		            	{% for image in user_images %}
+		            		<div class="chart">
+		                		<img src="{% get_static_prefix %}{{image}}">
+		                	</div>
+		            	{% endfor %}
+</div>
+{% endblock %}
+
+{%block content1%}
+
+
+
+
+<div class="facts-heading"> Raw data</div>
+                                                 <div class="click_more">
+                                                        Click on any state below for more analysis on districts/zones
+                                                </div>
+
+
+<div class="leftbottom">
+			            <pre class="heading">{{header1}}</pre>
+
+			            {% for i in data1 %}
+
+							<pre class="belowheading"><a href="districtdetail?name={{i}}">{{i}} </a></pre>
+			            {% endfor %}
+</div>
+{% endblock %}

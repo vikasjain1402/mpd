@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block style %}
+.footer{bottom:0px}
+@media only screen and (orientation:landscape){.footer{bottom:auto;width: -webkit-fill-available;}}
+{% endblock %}
+
+{% block district %}
+<div class="about">
+				<div>
+						<h2>About Us</h2>
+				</div>
+
+				<div>
+						<p>Welcome to coronastats.co.in, your number one source for all statistics on Corona Pandemic. We're dedicated to provide you the very best of data, with an emphasis on simplicity, visualization and completeness</p>
+			
+						<p>Founded in May 2020 , Coronastats.co.in has come a long way from its beginning to provide accurate and complete data with over 780 districts/zones of 37 states and union teritories . Our aim 'A In-depth complete statistics on COVID19 India Situation', with covering all states and districts/zones, drove us to start our own free Website for pubic use without login .</p>
+
+						<p>We hope you enjoy the website as much as we enjoy offering accurate statistics to you. If you have any questions or comments, please don't hesitate to contact us @ coronastatsindialive@gmail.com .</p>
+				</div>	
+
+						<p class="regrads"> Sincerely,<p>
+		<div class="anno">
+						<p>Admin</p>
+						<p>       coronastatsindialive@gmail.com</p>
+						<p>       http://www.coronastats.co.in</p>
+		</div>	
+
+</div>
+{% endblock %}
+
+
+{% block forscript %}
+<script>
+document.getElementsByTagName('title')[0].innerText="Coronastats about";
+</script>
+
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block mainheadings %}
+    <div class="main-heading_box">
+        {% for i in path %}
+                <div class="main-heading">{{i}}</div>
+        {% endfor %}
+     </div>
+{% endblock %}
+
+
+
+{% block stats %}
+
+
+        <div class="facts-heading"> Calculated Data<pre id="help-alert" onmouseover="mouseOver()">  ?</pre></div>
+
+        <div class="stats">
+                        {% for key,value in stats.items %}
+
+                                                        <div class='stats-item'>
+                                                        <div class="stats-key"> {{key}} </div> <div class='stats-num'> {{value}}</div>
+
+                                                        </div>
+
+                        {% endfor %}
+        </div>
+{% endblock %}
+
+
+
+{% block district %}
+
+<div class="facts-heading"> {{facts.0.location}}'s <div class="facts_heading_posi">Position</div> in {{facts.0.total}} States of {{facts.0.parentlocation}}</div>
+
+
+					<div class="factcontainer">
+						{% for  fact in facts %}
+						<div class="facts">			            		
+		       
+							<div>		                                                      
+                                                		<div class="facts_values">{{fact.rank}} </div>
+								<div class="rank_suf"></div>
+							</div>	 
+							<div class="facts_string">{{fact.critaria}}</div>
+
+		                		</div>
+		                		{% endfor %}	
+		            		</div> 
+		 
+		               			            
+
+{% endblock %}
+
+{% block content %}
+	
+	<div class="facts-heading"> Charts</div>
+	<div class="result22">
+	     <div id = "1"> </div>
+	     <div id = "2"></div>
+	     <div id = "3"></div>
+   <div id = "4"></div>
+
+
+	</div>
+
+
+
+
+{% endblock %}
+
+{%block content1 %}
+
+	<div class="facts-heading"> Raw data</div>
+                                                 <div class="click_more">
+                                                        Click on any state below for more analysis on states and districts/zones
+                                                </div>
+
+	<div class="leftbottom">
+				            <pre class="heading">{{header1}}</pre>
+				            {% for i in data1 %}
+								<pre class="belowheading"><a href="/india/district?name={{i}}">{{i}}</a></pre>
+				            {% endfor %}
+	</div>
+{% endblock %}
+
+{% block forscript %}
+{{ block.super }}
+
+	<script>
+
+		function rank(i)
+		{
+		    var suf="th";
+		        if (i%10==1){suf="st"};
+		        if (i%10==2){suf="nd"};
+		        if (i%10==3){suf="rd"};
+		        if (Math.floor((i%100)/10)==1){suf="th"};
+		    return suf
+		}
+		var ar=document.getElementsByClassName("facts_values")
+		var ar1=document.getElementsByClassName("rank_suf")
+
+		for (let j=0;j<ar.length;j++)
+
+		{ar1[j].innerHTML=rank(ar[j].innerText)}
+
+	</script>
+
+
+        <script>
+         google.charts.setOnLoadCallback ( function() { drawChart ( {{ googledata|safe }},'1','{{type1}}','{{ title1 }}','{{xlable1}}','{{ylable1}}') });
+         google.charts.setOnLoadCallback ( function() { drawChart ( {{ googledata1|safe}},'2','{{type2}}','{{ title2 }}','{{xlable2}}','{{ylable2}}') });
+         google.charts.setOnLoadCallback ( function() { drawChart ( {{ googledata2|safe}},'3','{{type3}}','{{ title3 }}','{{xlable3}}','{{ylable3}}') });
+         google.charts.setOnLoadCallback ( function() { drawChart ( {{ googledata3|safe}},'4','{{type4}}','{{ title4 }}','{{xlable4}}','{{ylable4}}') });
+
+      </script>
+
+
+
+{% endblock %}
+
+

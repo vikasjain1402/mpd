@@ -1,0 +1,5 @@
+[client]
+database = 'vikas'
+user = 'username'
+password = 'svasnnmsjdcfjdDFGH!5548)'
+default-character-set = 'utf8'
